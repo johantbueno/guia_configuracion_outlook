@@ -1,0 +1,820 @@
+<style>
+.ocfg{font-family:'Segoe UI',Arial,sans-serif;color:#1C2333;line-height:1.7;font-size:15px;max-width:860px;margin:0 auto}
+.ocfg-hero{background:linear-gradient(135deg,#0D1B3E 0%,#1A3C8F 55%,#2E5BE5 100%);border-radius:14px;padding:32px 28px;margin-bottom:20px;color:#fff}
+.ocfg-hero-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:4px 14px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:12px}
+.ocfg-hero h1{font-size:26px;font-weight:800;line-height:1.2;margin:0 0 8px 0;color:#fff}
+.ocfg-hero h1 em{color:#7EC8FF;font-style:normal}
+.ocfg-hero p{color:rgba(255,255,255,.78);font-size:14px;margin:0}
+.ocfg-path{background:#FFF4E5;border:1px solid #FFCF88;border-radius:10px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:10px;font-size:13px;color:#5C2D00}
+.ocfg-path-steps{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-weight:700}
+.ocfg-path-steps span{background:#D46A00;color:#fff;border-radius:6px;padding:3px 10px;font-size:12px}
+.ocfg-path-steps i{color:#D46A00;font-style:normal;font-size:16px;font-weight:900}
+.ocfg-nav{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:12px 16px;margin-bottom:24px}
+.ocfg-nav p{font-size:12px;font-weight:700;color:#6B7A90;margin:0 0 8px 0;text-transform:uppercase;letter-spacing:.5px}
+.ocfg-nav-links{display:flex;flex-wrap:wrap;gap:6px}
+.ocfg-nav-links a{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:7px;font-size:12px;font-weight:600;color:#2E5BE5;text-decoration:none;background:#EEF3FF;border:1px solid #C7D9F9}
+.ocfg-sec{background:#fff;border-radius:14px;border:1px solid #E2E8F0;margin-bottom:20px;overflow:hidden;box-shadow:0 2px 12px rgba(13,27,62,.06)}
+.ocfg-sec-head{display:flex;align-items:center;gap:12px;padding:16px 22px;border-bottom:2px solid}
+.ocfg-sec-num{width:42px;height:42px;border-radius:10px;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ocfg-sec-head h2{font-size:17px;font-weight:800;color:#0D1B3E;margin:0}
+.ocfg-sec-head p{font-size:12px;color:#6B7A90;margin:2px 0 0 0}
+.ocfg-body{padding:22px}
+.ocfg-setting{border:1px solid #E2E8F0;border-radius:11px;margin-bottom:14px;overflow:hidden}
+.ocfg-setting-head{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#F5F7FB;border-bottom:1px solid #E2E8F0}
+.ocfg-setting-head h3{font-size:14px;font-weight:700;color:#0D1B3E;margin:0}
+.ocfg-setting-head .otag{margin-left:auto;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}
+.ocfg-setting-body{padding:16px 18px}
+.ocfg-q{font-size:13px;font-weight:700;color:#3D4A5C;margin-bottom:10px;display:flex;align-items:flex-start;gap:8px}
+.ocfg-q::before{content:"❓";flex-shrink:0}
+.ocfg-opts{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.ocfg-opt{display:flex;align-items:flex-start;gap:10px;padding:9px 12px;border-radius:8px;border:1px solid #E2E8F0;font-size:13px;cursor:default}
+.ocfg-opt.recom{background:#E6F6ED;border-color:#9FD9BD}
+.ocfg-opt.recom .ocfg-dot{background:#1A8A5A}
+.ocfg-dot{width:16px;height:16px;border-radius:50%;border:2px solid #CBD5E1;flex-shrink:0;margin-top:1px;display:inline-flex;align-items:center;justify-content:center}
+.ocfg-dot.on{background:#2E5BE5;border-color:#2E5BE5}
+.ocfg-dot.on::after{content:'';width:6px;height:6px;background:#fff;border-radius:50%;display:block}
+.ocfg-opt-text{color:#3D4A5C;line-height:1.4}
+.ocfg-opt.recom .ocfg-opt-text{color:#0D3B1A;font-weight:600}
+.ocfg-badge-rec{font-size:10px;background:#1A8A5A;color:#fff;padding:2px 7px;border-radius:10px;font-weight:700;margin-left:6px;vertical-align:middle}
+.ocfg-def{border-left:4px solid;border-radius:0 9px 9px 0;padding:12px 16px;margin:12px 0;font-size:13px;color:#0D1B3E}
+.ocfg-def strong{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;opacity:.65}
+.ocfg-tip{display:flex;gap:10px;align-items:flex-start;padding:12px 16px;border-radius:9px;margin:12px 0;font-size:13px;border:1px solid}
+.ocfg-tip-icon{font-size:18px;flex-shrink:0}
+.ocfg-tip strong{display:block;font-weight:700;margin-bottom:3px}
+.tip-blue{background:#EEF3FF;border-color:#C7D9F9;color:#1A3C8F}
+.tip-green{background:#E6F6ED;border-color:#9FD9BD;color:#1A6640}
+.tip-orange{background:#FFF4E5;border-color:#FFCF88;color:#A04E00}
+.tip-purple{background:#F3EEFF;border-color:#C9AEFF;color:#5230A0}
+.tip-red{background:#FEF0EE;border-color:#FFBFB5;color:#8B1A0A}
+.ocfg-ex{background:#F5F7FB;border-radius:9px;padding:12px 16px;margin:12px 0;font-size:13px}
+.ocfg-ex-lbl{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#1A8A5A;margin-bottom:6px}
+.ocfg-tbl{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+.ocfg-tbl th{background:#0D1B3E;color:#fff;padding:8px 12px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+.ocfg-tbl td{padding:9px 12px;border-bottom:1px solid #E2E8F0;vertical-align:top;color:#3D4A5C}
+.ocfg-tbl tr:nth-child(even) td{background:#F5F7FB}
+.ocfg-sidebar-menu{background:#F5F7FB;border:1px solid #E2E8F0;border-radius:11px;padding:16px;margin-bottom:20px}
+.ocfg-sidebar-menu h3{font-size:12px;font-weight:700;color:#6B7A90;text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px 0}
+.ocfg-menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.ocfg-menu-item{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:7px;font-size:12px;font-weight:600;color:#3D4A5C;background:#fff;border:1px solid #E2E8F0}
+.ocfg-menu-item.active{background:#2E5BE5;color:#fff;border-color:#2E5BE5}
+.ocfg-menu-item.active .ocfg-mi-dot{background:rgba(255,255,255,.3);color:#fff}
+.ocfg-mi-dot{width:6px;height:6px;border-radius:50%;background:#CBD5E1;flex-shrink:0}
+.ocfg-panel-visual{border:2px solid #E2E8F0;border-radius:11px;overflow:hidden;margin:14px 0}
+.ocfg-panel-label{background:#E2E8F0;padding:6px 12px;font-size:11px;font-weight:700;color:#6B7A90;text-transform:uppercase;letter-spacing:.5px}
+.ocfg-panel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px}
+.ocfg-panel-opt{border:2px solid #E2E8F0;border-radius:8px;padding:8px;text-align:center;cursor:default}
+.ocfg-panel-opt.sel{border-color:#2E5BE5;background:#EEF3FF}
+.ocfg-panel-icon{font-size:22px;display:block;margin-bottom:4px}
+.ocfg-panel-opt p{font-size:11px;font-weight:700;color:#3D4A5C;margin:0}
+.ocfg-panel-opt.sel p{color:#2E5BE5}
+.ocfg-summary{background:linear-gradient(135deg,#0D1B3E,#1A3C8F);border-radius:14px;padding:24px;margin-top:20px}
+.ocfg-summary h2{color:#fff;font-size:18px;font-weight:800;margin:0 0 16px 0}
+.ocfg-sum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.ocfg-sum-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:9px;padding:12px}
+.ocfg-sum-card span{font-size:20px;display:block;margin-bottom:6px}
+.ocfg-sum-card h4{color:#fff;font-size:12px;font-weight:700;margin:0 0 3px 0}
+.ocfg-sum-card p{color:rgba(255,255,255,.55);font-size:11px;margin:0;line-height:1.4}
+.ocfg-footer{background:#F5F7FB;border:1px solid #E2E8F0;border-radius:12px;padding:16px 22px;text-align:center;color:#6B7A90;font-size:12px;margin-top:20px}
+.ocfg-footer strong{color:#0D1B3E}
+code{font-family:'Courier New',monospace;background:#E2E8F0;padding:2px 7px;border-radius:4px;font-size:12px;color:#1A3C8F}
+.rec-star{color:#D46A00;font-size:12px;font-weight:700;margin-left:4px}
+</style>
+
+<div class="ocfg">
+
+<!-- ═══ HERO ═══ -->
+<div class="ocfg-hero">
+  <div class="ocfg-hero-badge">📖 Guía Práctica · Módulo 1 · INFOTEP CP 26-430</div>
+  <h1>Pestaña <em>Configuración</em> de Outlook<br>Guía Completa para Principiantes</h1>
+  <p>Aprende a personalizar cada opción de la configuración de Outlook para crear un entorno de trabajo más productivo y adaptado a tus necesidades.</p>
+</div>
+
+<!-- ═══ CÓMO ACCEDER ═══ -->
+<div class="ocfg-path">
+  <span style="font-size:20px">⚙️</span>
+  <div>
+    <strong style="display:block;margin-bottom:4px;font-size:13px">¿Cómo abrir la Configuración?</strong>
+    <div class="ocfg-path-steps">
+      <span>Outlook Web</span>
+      <i>→</i>
+      <span>⚙️ Engranaje (arriba derecha)</span>
+      <i>→</i>
+      <span>Ver toda la configuración de Outlook</span>
+      <i>→</i>
+      <span>Correo → Diseño</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MENÚ LATERAL ═══ -->
+<div class="ocfg-sidebar-menu">
+  <h3>Panel de Configuración — Sección Correo</h3>
+  <div class="ocfg-menu-grid">
+    <div class="ocfg-menu-item active"><span class="ocfg-mi-dot"></span>Diseño</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Redactar y responder</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Plantillas</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Sugerencias inteligentes</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Datos adjuntos</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Reglas</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Formato condicional</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Limpiar</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Correo no deseado</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Pasos rápidos</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Carpetas de búsqueda</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Personalizar acciones</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Sincronizar correo</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Administración mensajes</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Reenvío</div>
+    <div class="ocfg-menu-item"><span class="ocfg-mi-dot"></span>Directivas de retención</div>
+  </div>
+  <div class="ocfg-tip tip-blue" style="margin-top:12px;margin-bottom:0">
+    <div class="ocfg-tip-icon">💡</div>
+    <div><strong>Esta guía cubre la sección "Diseño"</strong> — es la más importante para organizar visualmente tu bandeja de entrada. Las demás secciones se cubrirán en actividades complementarias.</div>
+  </div>
+</div>
+
+<!-- ═══ NAV ═══ -->
+<div class="ocfg-nav">
+  <p>Ir a sección:</p>
+  <div class="ocfg-nav-links">
+    <a href="#cfg1">📥 Bandeja Prioritarios</a>
+    <a href="#cfg2">🔤 Tamaño de texto</a>
+    <a href="#cfg3">📏 Altura mensajes</a>
+    <a href="#cfg4">🗂️ Organización</a>
+    <a href="#cfg5">🖼️ Imagen remitente</a>
+    <a href="#cfg6">📖 Panel de lectura</a>
+    <a href="#cfg7">📋 Formato lista</a>
+    <a href="#cfg8">👁️ Vista previa</a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════
+  SECCIÓN 1 — DISEÑO
+════════════════════════════════ -->
+<div class="ocfg-sec" id="cfg1">
+  <div class="ocfg-sec-head" style="border-color:#2E5BE5">
+    <div class="ocfg-sec-num" style="background:#2E5BE5">1</div>
+    <div>
+      <h2>Bandeja de Entrada Prioritarios</h2>
+      <p>Controla si Outlook separa automáticamente tus correos importantes</p>
+    </div>
+  </div>
+  <div class="ocfg-body">
+
+    <div class="ocfg-setting">
+      <div class="ocfg-setting-head">
+        <span style="font-size:18px">📥</span>
+        <h3>¿Quiere que Outlook ordene el correo electrónico para ayudarle a centrarse en lo más importante?</h3>
+      </div>
+      <div class="ocfg-setting-body">
+
+        <div class="ocfg-def" style="border-color:#2E5BE5;background:#EEF3FF">
+          <strong>¿Qué hace esta opción?</strong>
+          Cuando activas "Prioritarios y Otros", Outlook usa inteligencia artificial para analizar tus hábitos de lectura y separar automáticamente los correos importantes (de tu jefe, clientes habituales, compañeros) de los que no lo son (boletines, notificaciones automáticas, promociones).
+        </div>
+
+        <div class="ocfg-opts">
+          <div class="ocfg-opt recom">
+            <div class="ocfg-dot on"></div>
+            <div class="ocfg-opt-text">
+              <strong>Ordenar mensajes en Prioritarios y Otros</strong> <span class="rec-star">★ RECOMENDADO</span>
+              <div style="font-size:12px;font-weight:400;margin-top:2px;color:#1A6640">Outlook separa automáticamente los correos en dos pestañas. Ahorra tiempo al saber que en "Prioritarios" solo están los correos que requieren atención real.</div>
+            </div>
+          </div>
+          <div class="ocfg-opt">
+            <div class="ocfg-dot"></div>
+            <div class="ocfg-opt-text">
+              <strong>No ordenar mis mensajes</strong>
+              <div style="font-size:12px;font-weight:400;margin-top:2px">Todos los correos van a una sola bandeja mezclados. Debes revisar uno por uno. Menos recomendado para productividad.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ocfg-ex">
+          <strong class="ocfg-ex-lbl">💡 Ejemplo práctico</strong>
+          Ana recibe 60 correos diarios. Con "Prioritarios y Otros" activado: en "Prioritarios" ve 8 correos de su jefa y clientes importantes. En "Otros" están 52 boletines y notificaciones. Ana gestiona en minutos lo urgente y revisa "Otros" solo cuando tiene tiempo libre.
+        </div>
+
+        <div class="ocfg-tip tip-orange">
+          <div class="ocfg-tip-icon">⚙️</div>
+          <div><strong>¿Cómo entrenar a Outlook?</strong> Si un correo llega a "Otros" y debería estar en "Prioritarios": clic derecho → <code>Mover a Prioritarios</code> → selecciona <em>"Mover siempre los mensajes de [nombre]"</em>. Outlook aprenderá y corregirá automáticamente en el futuro.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════
+  SECCIÓN 2 — TAMAÑO Y ESPACIADO
+════════════════════════════════ -->
+<div class="ocfg-sec" id="cfg2">
+  <div class="ocfg-sec-head" style="border-color:#0EA5A0">
+    <div class="ocfg-sec-num" style="background:#0EA5A0">2</div>
+    <div>
+      <h2>Tamaño y Espaciado del Texto</h2>
+      <p>Ajusta el tamaño de letra de la interfaz de Outlook</p>
+    </div>
+  </div>
+  <div class="ocfg-body">
+
+    <div class="ocfg-setting">
+      <div class="ocfg-setting-head">
+        <span style="font-size:18px">🔤</span>
+        <h3>¿Qué tamaño de fuente desea para la interfaz?</h3>
+      </div>
+      <div class="ocfg-setting-body">
+
+        <div class="ocfg-def" style="border-color:#0EA5A0;background:#E6F9F8">
+          <strong>¿Qué hace esta opción?</strong>
+          Controla el tamaño de letra y el espaciado de la <em>interfaz de Outlook</em> (lista de correos, menús, paneles). <strong>No afecta el contenido de los correos que recibes o envías</strong>. Es solo para que la pantalla sea más cómoda para tus ojos.
+        </div>
+
+        <div class="ocfg-opts">
+          <div class="ocfg-opt">
+            <div class="ocfg-dot"></div>
+            <div class="ocfg-opt-text">
+              <strong>Pequeño</strong>
+              <div style="font-size:12px;font-weight:400;margin-top:2px">Letras más pequeñas, caben más correos en pantalla. Ideal para pantallas grandes o personas con buena visión.</div>
+            </div>
+          </div>
+          <div class="ocfg-opt">
+            <div class="ocfg-dot"></div>
+            <div class="ocfg-opt-text">
+              <strong>Medio</strong>
+              <div style="font-size:12px;font-weight:400;margin-top:2px">Tamaño equilibrado. Buena opción para la mayoría de usuarios.</div>
+            </div>
+          </div>
+          <div class="ocfg-opt recom">
+            <div class="ocfg-dot on"></div>
+            <div class="ocfg-opt-text">
+              <strong>Grande</strong> <span class="rec-star">★ RECOMENDADO</span>
+              <div style="font-size:12px;font-weight:400;margin-top:2px;color:#1A6640">Letras más grandes, mejor legibilidad. Ideal para trabajo prolongado frente al computador, pantallas pequeñas o laptops.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ocfg-tip tip-blue">
+          <div class="ocfg-tip-icon">👁️</div>
+          <div><strong>Consejo de ergonomía visual:</strong> Si pasas más de 4 horas frente a la pantalla, selecciona "Grande". Reduce la fatiga visual al final del día. Recuerda también aplicar la regla 20-20-20: cada 20 minutos, mira algo a 20 pies de distancia por 20 segundos.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════
+  SECCIÓN 3 — ALTURA DEL MENSAJE
+════════════════════════════════ -->
+<div class="ocfg-sec" id="cfg3">
+  <div class="ocfg-sec-head" style="border-color:#6E3EBF">
+    <div class="ocfg-sec-num" style="background:#6E3EBF">3</div>
+    <div>
+      <h2>Altura del Mensaje</h2>
+      <p>Define cuánto espacio ocupa cada correo en la lista</p>
+    </div>
+  </div>
+  <div class="ocfg-body">
+
+    <div class="ocfg-setting">
+      <div class="ocfg-setting-head">
+        <span style="font-size:18px">📏</span>
+        <h3>¿Cuántas filas debe usar cada mensaje en la lista?</h3>
+      </div>
+      <div class="ocfg-setting-body">
+
+        <div class="ocfg-def" style="border-color:#6E3EBF;background:#F3EEFF">
+          <strong>¿Qué hace esta opción?</strong>
+          Controla la densidad visual de tu lista de correos. Con "varias filas" ves menos correos pero con más información de cada uno (asunto, remitente, vista previa). Con "una fila" ves más correos en pantalla pero con menos detalle.
+        </div>
+
+        <div class="ocfg-opts">
+          <div class="ocfg-opt">
+            <div class="ocfg-dot"></div>
+            <div class="ocfg-opt-text">
+              <strong>Usar siempre varias filas</strong>
+              <div style="font-size:12px;font-weight:400;margin-top:2px">Cada correo ocupa varias filas. Ves el remitente, asunto y vista previa del texto. Ideal para pantallas grandes.</div>
+            </div>
+          </div>
+          <div class="ocfg-opt recom">
+            <div class="ocfg-dot on"></div>
+            <div class="ocfg-opt-text">
+              <strong>Cambiar entre una y varias filas según el tamaño de pantalla</strong> <span class="rec-star">★ RECOMENDADO</span>
+              <div style="font-size:12px;font-weight:400;margin-top:2px;color:#1A6640">Outlook decide automáticamente según el tamaño de tu pantalla. En pantallas grandes usa varias filas; en pantallas pequeñas (laptop, tablet) usa una fila para aprovechar el espacio.</div>
+            </div>
+          </div>
+        </div>
+
+        <table class="ocfg-tbl">
+          <thead><tr><th>Modo</th><th>Pantalla ideal</th><th>Qué ves de cada correo</th></tr></thead>
+          <tbody>
+            <tr><td>Una fila</td><td>Laptops / pantallas pequeñas</td><td>Solo remitente y asunto</td></tr>
+            <tr><td>Varias filas</td><td>Monitores grandes</td><td>Remitente, asunto y vista previa del texto</td></tr>
+            <tr><td>Automático ★</td><td>Cualquier pantalla</td><td>Outlook adapta según el espacio disponible</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════
+  SECCIÓN 4 — ORGANIZACIÓN MENSAJES
+════════════════════════════════ -->
+<div class="ocfg-sec" id="cfg4">
+  <div class="ocfg-sec-head" style="border-color:#D46A00">
+    <div class="ocfg-sec-num" style="background:#D46A00">4</div>
+    <div>
+      <h2>Organización de Mensajes</h2>
+      <p>Cómo se agrupan los correos en la lista</p>
+    </div>
+  </div>
+  <div class="ocfg-body">
+
+    <div class="ocfg-setting">
+      <div class="ocfg-setting-head">
+        <span style="font-size:18px">🗂️</span>
+        <h3>¿Cómo desea organizar la lista de mensajes?</h3>
+      </div>
+      <div class="ocfg-setting-body">
+
+        <div class="ocfg-def" style="border-color:#D46A00;background:#FFF4E5">
+          <strong>¿Qué es una "conversación"?</strong>
+          Una <strong>conversación</strong> en Outlook es el hilo completo de correos relacionados con el mismo asunto: el correo original, las respuestas y los reenvíos. En lugar de ver 8 correos separados sobre el mismo tema, los agrupa en uno solo que puedes expandir.
+        </div>
+
+        <div class="ocfg-opts">
+          <div class="ocfg-opt recom">
+            <div class="ocfg-dot on"></div>
+            <div class="ocfg-opt-text">
+              <strong>Agrupar mensajes por conversación</strong> <span class="rec-star">★ RECOMENDADO</span>
+              <div style="font-size:12px;font-weight:400;margin-top:2px;color:#1A6640">Todos los correos del mismo hilo aparecen juntos, agrupados bajo el asunto del correo original. Reduces el número de ítems en tu bandeja y ves el contexto completo de cada tema.</div>
+            </div>
+          </div>
+          <div class="ocfg-opt">
+            <div class="ocfg-dot"></div>
+            <div class="ocfg-opt-text">
+              <strong>Agrupar mensajes por ramas dentro de conversaciones</strong>
+              <div style="font-size:12px;font-weight:400;margin-top:2px">Como la opción anterior, pero organiza visualmente las respuestas en forma de árbol (quién respondió a quién). Más detallado pero más complejo visualmente.</div>
+            </div>
+          </div>
+          <div class="ocfg-opt">
+            <div class="ocfg-dot"></div>
+            <div class="ocfg-opt-text">
+              <strong>No agrupar mensajes</strong>
+              <div style="font-size:12px;font-weight:400;margin-top:2px">Cada correo aparece por separado en orden cronológico. Más correos visibles pero sin contexto de conversación. Puede generar desorden en bandejas con muchas respuestas.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ocfg-ex">
+          <strong class="ocfg-ex-lbl">💡 Ejemplo</strong>
+          Pedro envía un correo a 3 compañeros sobre una reunión. Recibe 5 respuestas. <strong>Sin agrupación:</strong> ve 6 correos separados en su bandeja. <strong>Con agrupación por conversación:</strong> ve 1 ítem con una flecha que indica que tiene 5 respuestas. Al hacer clic, ve todo el hilo en orden.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════
+  SECCIÓN 5 — PANEL DE LECTURA (QUÉS VER)
+════════════════════════════════ -->
+<div class="ocfg-sec" id="cfg5">
+  <div class="ocfg-sec-head" style="border-color:#1A8A5A">
+    <div class="ocfg-sec-num" style="background:#1A8A5A">5</div>
+    <div>
+      <h2>¿Qué desea ver en el panel de lectura?</h2>
+      <p>Cuántos mensajes de una conversación se muestran al abrirla</p>
+    </div>
+  </div>
+  <div class="ocfg-body">
+    <div class="ocfg-setting">
+      <div class="ocfg-setting-head">
+        <span style="font-size:18px">📖</span>
+        <h3>Contenido del panel de lectura al seleccionar un correo</h3>
+      </div>
+      <div class="ocfg-setting-body">
+        <div class="ocfg-opts">
+          <div class="ocfg-opt recom">
+            <div class="ocfg-dot on"></div>
+            <div class="ocfg-opt-text">
+              <strong>Todos los mensajes de la conversación seleccionada</strong> <span class="rec-star">★ RECOMENDADO</span>
+              <div style="font-size:12px;font-weight:400;margin-top:2px;color:#1A6640">Al hacer clic en una conversación, el panel de lectura muestra todos los correos del hilo en orden. Puedes ver el contexto completo sin abrir cada correo por separado.</div>
+            </div>
+          </div>
+          <div class="ocfg-opt">
+            <div class="ocfg-dot"></div>
+            <div class="ocfg-opt-text">
+              <strong>Solo el mensaje seleccionado</strong>
+              <div style="font-size:12px;font-weight:400;margin-top:2px">Solo muestra el correo específico en el que hiciste clic, sin el hilo completo. Útil si prefieres leer cada mensaje de forma individual.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ocfg-setting" style="margin-top:14px">
+          <div class="ocfg-setting-head">
+            <span style="font-size:16px">🗑️</span>
+            <h3>¿Quiere ver los elementos eliminados en las conversaciones?</h3>
+          </div>
+          <div class="ocfg-setting-body">
+            <div class="ocfg-opts">
+              <div class="ocfg-opt recom">
+                <div class="ocfg-dot on"></div>
+                <div class="ocfg-opt-text">
+                  <strong>Ver elementos eliminados</strong> <span class="rec-star">★ RECOMENDADO</span>
+                  <div style="font-size:12px;font-weight:400;margin-top:2px;color:#1A6640">Si eliminaste un correo que pertenece a una conversación, aún aparece (tachado o diferenciado) dentro del hilo. Ayuda a mantener el contexto completo de la conversación.</div>
+                </div>
+              </div>
+              <div class="ocfg-opt">
+                <div class="ocfg-dot"></div>
+                <div class="ocfg-opt-text">
+                  <strong>Ocultar elementos eliminados</strong>
+                  <div style="font-size:12px;font-weight:400;margin-top:2px">Los correos eliminados desaparecen completamente del hilo. Vista más limpia pero puede perderse el contexto.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════
+  SECCIÓN 6 — IMAGEN REMITENTE
+════════════════════════════════ -->
+<div class="ocfg-sec" id="cfg6">
+  <div class="ocfg-sec-head" style="border-color:#0EA5A0">
+    <div class="ocfg-sec-num" style="background:#0EA5A0">6</div>
+    <div>
+      <h2>Imagen de Remitente</h2>
+      <p>Mostrar foto o iniciales de quien te envía correos</p>
+    </div>
+  </div>
+  <div class="ocfg-body">
+    <div class="ocfg-setting">
+      <div class="ocfg-setting-head">
+        <span style="font-size:18px">🖼️</span>
+        <h3>¿Mostrar la imagen de cada remitente en la lista de mensajes?</h3>
+      </div>
+      <div class="ocfg-setting-body">
+
+        <div class="ocfg-def" style="border-color:#0EA5A0;background:#E6F9F8">
+          <strong>¿Qué hace esta opción?</strong>
+          En la lista de correos, junto al nombre del remitente puede aparecer su foto de perfil de Microsoft 365. Si no tiene foto, se muestran sus iniciales sobre un fondo de color. Esto ayuda a identificar visualmente de quién proviene cada correo.
+        </div>
+
+        <div class="ocfg-opts">
+          <div class="ocfg-opt recom">
+            <div class="ocfg-dot on"></div>
+            <div class="ocfg-opt-text">
+              <strong>Mostrar imágenes del remitente</strong> <span class="rec-star">★ RECOMENDADO</span>
+              <div style="font-size:12px;font-weight:400;margin-top:2px;color:#1A6640">Ves la foto o iniciales del remitente. Reconoces visualmente de quién es el correo antes de leer el nombre. Más útil en organizaciones donde conoces a tus compañeros de trabajo.</div>
+            </div>
+          </div>
+          <div class="ocfg-opt">
+            <div class="ocfg-dot"></div>
+            <div class="ocfg-opt-text">
+              <strong>No mostrar las imágenes del remitente</strong>
+              <div style="font-size:12px;font-weight:400;margin-top:2px">Solo aparece el nombre del remitente. Vista más compacta. Útil en conexiones lentas o si prefieres una interfaz más simple.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ocfg-tip tip-blue">
+          <div class="ocfg-tip-icon">📸</div>
+          <div><strong>¿Cómo agrego mi foto de perfil?</strong> Ve a <code>portal.office.com</code> → clic en tu inicial (arriba derecha) → <code>Ver cuenta</code> → <code>Cambiar foto</code>. Tu foto aparecerá en Outlook, Teams, SharePoint y todas las apps de M365.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════
+  SECCIÓN 7 — PANEL DE LECTURA (POSICIÓN)
+════════════════════════════════ -->
+<div class="ocfg-sec" id="cfg7">
+  <div class="ocfg-sec-head" style="border-color:#6E3EBF">
+    <div class="ocfg-sec-num" style="background:#6E3EBF">7</div>
+    <div>
+      <h2>Panel de Lectura — Posición y Comportamiento</h2>
+      <p>Dónde y cómo se muestra el contenido del correo seleccionado</p>
+    </div>
+  </div>
+  <div class="ocfg-body">
+
+    <div class="ocfg-setting">
+      <div class="ocfg-setting-head">
+        <span style="font-size:18px">📐</span>
+        <h3>¿Cómo desea que se coloque el panel de lectura?</h3>
+      </div>
+      <div class="ocfg-setting-body">
+
+        <div class="ocfg-def" style="border-color:#6E3EBF;background:#F3EEFF">
+          <strong>¿Qué es el Panel de Lectura?</strong>
+          El <strong>panel de lectura</strong> es el área donde se muestra el contenido del correo que seleccionas en la lista. Puedes elegir dónde aparece: a la derecha de la lista, debajo de ella, en pantalla completa, o solo en ventanas emergentes.
+        </div>
+
+        <div class="ocfg-panel-visual">
+          <div class="ocfg-panel-label">Opciones de posición del Panel de Lectura</div>
+          <div class="ocfg-panel-grid">
+            <div class="ocfg-panel-opt sel">
+              <span class="ocfg-panel-icon">⬛▐</span>
+              <p>Derecha ★</p>
+            </div>
+            <div class="ocfg-panel-opt">
+              <span class="ocfg-panel-icon">⬛<br>▬</span>
+              <p>Parte inferior</p>
+            </div>
+            <div class="ocfg-panel-opt">
+              <span class="ocfg-panel-icon">🔳</span>
+              <p>Rellenar pantalla</p>
+            </div>
+            <div class="ocfg-panel-opt">
+              <span class="ocfg-panel-icon">🪟</span>
+              <p>Solo emergentes</p>
+            </div>
+          </div>
+        </div>
+
+        <table class="ocfg-tbl">
+          <thead><tr><th>Posición</th><th>Descripción</th><th>Ideal para</th></tr></thead>
+          <tbody>
+            <tr><td>⬛▐ <strong>Derecha ★</strong></td><td>Lista a la izquierda, correo a la derecha</td><td>Monitores anchos y pantallas grandes</td></tr>
+            <tr><td>⬛↓ <strong>Parte inferior</strong></td><td>Lista arriba, correo abajo</td><td>Pantallas más cuadradas o tablets</td></tr>
+            <tr><td>🔳 <strong>Rellenar pantalla</strong></td><td>El correo ocupa toda la pantalla</td><td>Leer correos largos sin distracción</td></tr>
+            <tr><td>🪟 <strong>Solo emergentes</strong></td><td>El correo se abre en ventana aparte</td><td>Trabajo con múltiples ventanas</td></tr>
+          </tbody>
+        </table>
+
+        <div class="ocfg-tip tip-purple">
+          <div class="ocfg-tip-icon">💡</div>
+          <div><strong>Recomendación:</strong> Selecciona <strong>"Derecha"</strong> si usas un monitor externo o laptop con pantalla grande. Selecciona <strong>"Parte inferior"</strong> si tu pantalla es más pequeña o cuadrada. La posición "Derecha" es la que usa la mayoría de usuarios corporativos.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ocfg-setting">
+      <div class="ocfg-setting-head">
+        <span style="font-size:18px">📶</span>
+        <h3>¿Cómo desea que se ordenen los mensajes en el panel?</h3>
+      </div>
+      <div class="ocfg-setting-body">
+        <div class="ocfg-opts">
+          <div class="ocfg-opt">
+            <div class="ocfg-dot"></div>
+            <div class="ocfg-opt-text">
+              <strong>Más recientes en la parte superior</strong>
+              <div style="font-size:12px;font-weight:400;margin-top:2px">El correo más reciente de la conversación aparece primero. Debes hacer scroll hacia abajo para ver el origen.</div>
+            </div>
+          </div>
+          <div class="ocfg-opt recom">
+            <div class="ocfg-dot on"></div>
+            <div class="ocfg-opt-text">
+              <strong>Más recientes en la parte inferior</strong> <span class="rec-star">★ RECOMENDADO</span>
+              <div style="font-size:12px;font-weight:400;margin-top:2px;color:#1A6640">El hilo de conversación fluye de arriba hacia abajo como un chat: ves el contexto inicial arriba y las respuestas más recientes abajo. Más natural e intuitivo para seguir una conversación.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ocfg-setting" style="margin-top:14px">
+          <div class="ocfg-setting-head">
+            <span style="font-size:16px">➡️</span>
+            <h3>¿Qué desea que ocurra cuando mueva o elimine el elemento que está viendo?</h3>
+          </div>
+          <div class="ocfg-setting-body">
+            <div class="ocfg-opts">
+              <div class="ocfg-opt recom">
+                <div class="ocfg-dot on"></div>
+                <div class="ocfg-opt-text">
+                  <strong>Abrir el siguiente elemento</strong> <span class="rec-star">★ RECOMENDADO</span>
+                  <div style="font-size:12px;font-weight:400;margin-top:2px;color:#1A6640">Al archivar, eliminar o mover un correo, Outlook abre automáticamente el siguiente en la lista. Agiliza el procesamiento de la bandeja de entrada sin tener que hacer clic manualmente.</div>
+                </div>
+              </div>
+              <div class="ocfg-opt">
+                <div class="ocfg-dot"></div>
+                <div class="ocfg-opt-text">
+                  <strong>Abrir el elemento anterior</strong>
+                  <div style="font-size:12px;font-weight:400;margin-top:2px">Al procesar un correo, vuelve al correo anterior en la lista.</div>
+                </div>
+              </div>
+              <div class="ocfg-opt">
+                <div class="ocfg-dot"></div>
+                <div class="ocfg-opt-text">
+                  <strong>Volver a la lista de mensajes</strong>
+                  <div style="font-size:12px;font-weight:400;margin-top:2px">Al procesar un correo, el panel de lectura queda en blanco. Debes seleccionar manualmente el siguiente correo.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ocfg-setting" style="margin-top:14px">
+          <div class="ocfg-setting-head">
+            <span style="font-size:16px">🚀</span>
+            <h3>¿Qué desea que hagamos al abrir Outlook?</h3>
+          </div>
+          <div class="ocfg-setting-body">
+            <div class="ocfg-opts">
+              <div class="ocfg-opt">
+                <div class="ocfg-dot"></div>
+                <div class="ocfg-opt-text">
+                  <strong>Abrir el primer mensaje de la lista</strong>
+                  <div style="font-size:12px;font-weight:400;margin-top:2px">Al abrir Outlook, se muestra automáticamente el primer correo de la bandeja. Útil si siempre quieres ir directo al correo más reciente.</div>
+                </div>
+              </div>
+              <div class="ocfg-opt recom">
+                <div class="ocfg-dot on"></div>
+                <div class="ocfg-opt-text">
+                  <strong>Permitirme seleccionar el mensaje que quiero leer primero</strong> <span class="rec-star">★ RECOMENDADO</span>
+                  <div style="font-size:12px;font-weight:400;margin-top:2px;color:#1A6640">Outlook se abre mostrando la lista de correos sin abrir ninguno. Puedes decidir conscientemente cuál leer primero, en lugar de que Outlook decida por ti. Más control sobre tu atención.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════
+  SECCIÓN 8 — FORMATO LISTA Y VISTA PREVIA
+════════════════════════════════ -->
+<div class="ocfg-sec" id="cfg8">
+  <div class="ocfg-sec-head" style="border-color:#1A8A5A">
+    <div class="ocfg-sec-num" style="background:#1A8A5A">8</div>
+    <div>
+      <h2>Formato de Lista y Vista Previa de Mensajes</h2>
+      <p>Cómo se muestran los correos en la lista y cuánta información ves sin abrirlos</p>
+    </div>
+  </div>
+  <div class="ocfg-body">
+
+    <div class="ocfg-setting">
+      <div class="ocfg-setting-head">
+        <span style="font-size:18px">📋</span>
+        <h3>¿Cómo desea que se muestren sus mensajes en la lista?</h3>
+      </div>
+      <div class="ocfg-setting-body">
+        <div class="ocfg-opts">
+          <div class="ocfg-opt recom">
+            <div class="ocfg-dot on"></div>
+            <div class="ocfg-opt-text">
+              <strong>Primero el nombre del remitente</strong> <span class="rec-star">★ RECOMENDADO</span>
+              <div style="font-size:12px;font-weight:400;margin-top:2px;color:#1A6640">En la lista de correos, lo primero que ves es el nombre de quien te escribe. Ideal para entornos de trabajo donde identificar al remitente es más importante que el asunto.</div>
+            </div>
+          </div>
+          <div class="ocfg-opt">
+            <div class="ocfg-dot"></div>
+            <div class="ocfg-opt-text">
+              <strong>Primero el asunto</strong>
+              <div style="font-size:12px;font-weight:400;margin-top:2px">Lo primero que ves es el asunto del correo. Útil si recibes correos de muchos remitentes diferentes y el tema es más relevante que quién escribe.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ocfg-setting">
+      <div class="ocfg-setting-head">
+        <span style="font-size:18px">👁️</span>
+        <h3>Texto de Vista Previa de Mensaje</h3>
+      </div>
+      <div class="ocfg-setting-body">
+
+        <div class="ocfg-def" style="border-color:#1A8A5A;background:#E6F6ED">
+          <strong>¿Qué es el texto de vista previa?</strong>
+          En la lista de correos, debajo del asunto, Outlook puede mostrar las primeras líneas del contenido del correo sin necesidad de abrirlo. Esto te permite decidir rápidamente si un correo requiere atención inmediata.
+        </div>
+
+        <div class="ocfg-opts">
+          <div class="ocfg-opt recom">
+            <div class="ocfg-dot on"></div>
+            <div class="ocfg-opt-text">
+              <strong>Mostrar texto de vista previa</strong> <span class="rec-star">★ RECOMENDADO</span>
+              <div style="font-size:12px;font-weight:400;margin-top:2px;color:#1A6640">Ves un fragmento del correo directamente en la lista. Tomas decisiones rápidas (leer ahora, dejar para después, eliminar) sin abrir el correo.</div>
+            </div>
+          </div>
+          <div class="ocfg-opt">
+            <div class="ocfg-dot"></div>
+            <div class="ocfg-opt-text">
+              <strong>Ocultar texto de vista previa</strong>
+              <div style="font-size:12px;font-weight:400;margin-top:2px">Solo ves remitente y asunto. Lista más compacta pero con menos información para tomar decisiones rápidas.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ocfg-setting">
+      <div class="ocfg-setting-head">
+        <span style="font-size:18px">📎</span>
+        <h3>Insertar Vista Previa de Datos Adjuntos</h3>
+      </div>
+      <div class="ocfg-setting-body">
+
+        <div class="ocfg-def" style="border-color:#1A8A5A;background:#E6F6ED">
+          <strong>¿Qué hace esta opción?</strong>
+          Cuando un correo tiene archivos adjuntos (PDF, Word, Excel, imágenes), Outlook puede mostrar una vista previa o miniatura del adjunto directamente en la lista de mensajes, sin necesidad de abrir el correo.
+        </div>
+
+        <div class="ocfg-opts">
+          <div class="ocfg-opt recom">
+            <div class="ocfg-dot on"></div>
+            <div class="ocfg-opt-text">
+              <strong>Mostrar los datos adjuntos en la lista de mensajes</strong> <span class="rec-star">★ RECOMENDADO</span>
+              <div style="font-size:12px;font-weight:400;margin-top:2px;color:#1A6640">Ves el ícono o miniatura del adjunto en la lista. Identificas inmediatamente correos con documentos importantes sin abrirlos.</div>
+            </div>
+          </div>
+          <div class="ocfg-opt">
+            <div class="ocfg-dot"></div>
+            <div class="ocfg-opt-text">
+              <strong>No mostrar los datos adjuntos en la lista de mensajes</strong>
+              <div style="font-size:12px;font-weight:400;margin-top:2px">Lista más compacta. Los adjuntos solo se ven al abrir el correo.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ocfg-tip tip-orange">
+          <div class="ocfg-tip-icon">⚡</div>
+          <div><strong>Truco de productividad:</strong> Con vista previa de adjuntos activada, puedes hacer clic directamente en el ícono del adjunto desde la lista para abrirlo o descargarlo sin necesidad de abrir el correo primero. Ahorra clics y tiempo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════
+  RESUMEN DE CONFIGURACIÓN ÓPTIMA
+════════════════════════════════ -->
+<div class="ocfg-sec">
+  <div class="ocfg-sec-head" style="border-color:#2E5BE5">
+    <div class="ocfg-sec-num" style="background:#2E5BE5">✅</div>
+    <div>
+      <h2>Configuración Óptima Recomendada</h2>
+      <p>Resumen de todas las opciones recomendadas para máxima productividad</p>
+    </div>
+  </div>
+  <div class="ocfg-body">
+    <table class="ocfg-tbl">
+      <thead><tr><th>Opción</th><th>Configuración Recomendada ★</th><th>Beneficio</th></tr></thead>
+      <tbody>
+        <tr><td>Bandeja Prioritarios</td><td>✅ Ordenar en Prioritarios y Otros</td><td>Enfoca atención en correos importantes</td></tr>
+        <tr><td>Tamaño de texto</td><td>✅ Grande</td><td>Reduce fatiga visual</td></tr>
+        <tr><td>Altura de mensajes</td><td>✅ Automático según pantalla</td><td>Aprovecha el espacio disponible</td></tr>
+        <tr><td>Organización</td><td>✅ Agrupar por conversación</td><td>Reduce desorden en la bandeja</td></tr>
+        <tr><td>Panel de lectura: qué ver</td><td>✅ Todos los mensajes del hilo</td><td>Contexto completo de la conversación</td></tr>
+        <tr><td>Elementos eliminados</td><td>✅ Ver elementos eliminados</td><td>Mantiene contexto del hilo</td></tr>
+        <tr><td>Imagen del remitente</td><td>✅ Mostrar imágenes</td><td>Identificación visual rápida</td></tr>
+        <tr><td>Posición del panel</td><td>✅ Derecha</td><td>Uso eficiente del espacio en pantallas anchas</td></tr>
+        <tr><td>Orden en el panel</td><td>✅ Más recientes abajo</td><td>Lectura natural del hilo de conversación</td></tr>
+        <tr><td>Al eliminar/mover</td><td>✅ Abrir siguiente elemento</td><td>Procesar correos sin interrupciones</td></tr>
+        <tr><td>Al abrir Outlook</td><td>✅ Elegir el primer mensaje</td><td>Control consciente de la atención</td></tr>
+        <tr><td>Formato de lista</td><td>✅ Primero el remitente</td><td>Identificar rápidamente el origen</td></tr>
+        <tr><td>Vista previa de texto</td><td>✅ Mostrar vista previa</td><td>Decisiones rápidas sin abrir correos</td></tr>
+        <tr><td>Vista previa de adjuntos</td><td>✅ Mostrar adjuntos</td><td>Acceso directo a documentos</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ocfg-tip tip-green">
+      <div class="ocfg-tip-icon">🏆</div>
+      <div><strong>Tip final:</strong> Una vez configurado Outlook con estas opciones, la experiencia cambia radicalmente. Los estudios de Microsoft muestran que una configuración optimizada puede reducir el tiempo de gestión del correo hasta en un <strong>35% en las primeras dos semanas</strong> de uso.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ RESUMEN VISUAL ═══ -->
+<div class="ocfg-summary">
+  <h2>📋 Resumen de la Guía</h2>
+  <div class="ocfg-sum-grid">
+    <div class="ocfg-sum-card"><span>📥</span><h4>Bandeja Prioritarios</h4><p>Separación inteligente de correos importantes y secundarios</p></div>
+    <div class="ocfg-sum-card"><span>🔤</span><h4>Tamaño y Espaciado</h4><p>Ajuste visual para reducir fatiga ocular</p></div>
+    <div class="ocfg-sum-card"><span>📏</span><h4>Altura de Mensajes</h4><p>Densidad de la lista adaptada a tu pantalla</p></div>
+    <div class="ocfg-sum-card"><span>🗂️</span><h4>Organización</h4><p>Agrupación por conversación para menos desorden</p></div>
+    <div class="ocfg-sum-card"><span>📖</span><h4>Panel de Lectura</h4><p>Posición, orden y comportamiento del área de lectura</p></div>
+    <div class="ocfg-sum-card"><span>👁️</span><h4>Vista Previa</h4><p>Texto y adjuntos visibles sin abrir cada correo</p></div>
+  </div>
+  <div class="ocfg-tip tip-blue" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff">
+    <div class="ocfg-tip-icon">📌</div>
+    <div><strong style="color:#fff">Recuerda:</strong> <span style="opacity:.85">Estas configuraciones se guardan automáticamente en tu cuenta de Microsoft 365 y se sincronizan en todos tus dispositivos (PC, laptop, móvil). Solo necesitas configurarlo una vez.</span></div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="ocfg-footer">
+  <strong>INFOTEP Virtual</strong> · CP 26-430 · Código 20261600885<br>
+  Manejo del Tiempo con Herramientas Office 365 · Módulo 1: Configuración de Outlook<br>
+  Facilitador: <strong>Johan Manuel Tapia Bueno, PhD</strong>
+</div>
+
+</div>
